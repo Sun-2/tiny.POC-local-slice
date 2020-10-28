@@ -61,7 +61,7 @@ const createLocalSlice = <T extends any>(initialState: T, reducers: any) => {
 };
 
 const { actions, useDispatch, useSelector, useSlice } = createLocalSlice(
-  { counter: 0, reduntant: 0 },
+  { counter: 0, redundant: 0 },
   {
     increase: (state, action) => {
       state.counter += 1;
@@ -83,8 +83,8 @@ const Value = () => {
   return <p>Value is: {value}</p>;
 };
 
-const Reduntant = memo(() => {
-  const value = useSelector((state) => state.reduntant);
+const Redundant = memo(() => {
+  const value = useSelector((state) => state.redundant);
   console.log("REDUNTANT RENDER");
 
   return <p>Hi, I'm here. Rerenders: {value}</p>;
@@ -98,7 +98,7 @@ function App() {
         <p>Hello! Counter is {state.counter}</p>
         <Compo />
         <Value />
-        <Reduntant />
+        <Redundant />
       </Provider>
     </>
   );
