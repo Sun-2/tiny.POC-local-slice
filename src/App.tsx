@@ -1,20 +1,6 @@
-import React, {
-  Dispatch,
-  memo,
-  useContext,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from "react";
-import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import React, { Dispatch, memo, useMemo, useReducer } from "react";
+import { createSlice } from "@reduxjs/toolkit";
 import { createContext, useContextSelector } from "use-context-selector";
-
-const reducers = {
-  increase: (state: any, action: PayloadAction) => {
-    state.counter += 1;
-  },
-};
 
 const createLocalSlice = <T extends any>(initialState: T, reducers: any) => {
   const { reducer, actions } = createSlice({
@@ -85,7 +71,7 @@ const Value = () => {
 
 const Redundant = memo(() => {
   const value = useSelector((state) => state.redundant);
-  console.log("REDUNTANT RENDER");
+  console.log("REDUNDANT RENDER");
 
   return <p>Hi, I'm here. Rerenders: {value}</p>;
 });
